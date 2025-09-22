@@ -1,4 +1,4 @@
-## VennCoat — Landing Page React (Vite + Tailwind)
+# VennCoat
 
 Proiect frontend pentru prezentarea serviciilor VennCoat (tencuieli, vopsitorii, finisaje). Stack modern, performanță ridicată și stiluri utilitare cu Tailwind v4.
 
