@@ -1,12 +1,98 @@
-# React + Vite
+## VennCoat — Landing Page React (Vite + Tailwind)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Proiect frontend pentru prezentarea serviciilor VennCoat (tencuieli, vopsitorii, finisaje). Stack modern, performanță ridicată și stiluri utilitare cu Tailwind v4.
 
-Currently, two official plugins are available:
+### Tech stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- React 19 + Vite 7
+- Tailwind CSS v4 (preset `@tailwindcss/vite`)
+- Heroicons React
+- ESLint + Prettier (cu plugin Tailwind)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Cerințe
+
+- Node.js 18+ (recomandat LTS 20+)
+- pnpm / npm / yarn (orice manager de pachete)
+
+### Instalare
+
+```bash
+npm install
+```
+
+### Dezvoltare
+
+```bash
+npm run dev
+```
+
+Deschide apoi aplicația la `http://localhost:5173` (implicit Vite).
+
+### Build producție
+
+```bash
+npm run build
+npm run preview   # servește build-ul local pentru verificare
+```
+
+### Scripturi utile
+
+- `npm run dev` – server de development Vite
+- `npm run build` – build producție
+- `npm run preview` – previzualizare build
+- `npm run lint` – rulează ESLint
+- `npm run format` – rulează Prettier (cu sortare de clase Tailwind)
+
+---
+
+### Structură proiect (scurt)
+
+```
+src/
+  assets/           # imagini, svg, media (ex: star.svg, hero-image.webp)
+  components/       # componente UI (Navbar, Badge, ServicesCard etc.)
+  sections/         # secțiuni de pagină (Hero, Services etc.)
+  styles/           # CSS global + layere Tailwind (index.css)
+  main.jsx          # bootstrap React
+  App.jsx           # root component
+public/             # fișiere servite ca static (dacă e cazul)
+```
+
+### Stiluri (Tailwind v4)
+
+- Configurarea Tailwind este făcută în `src/styles/index.css` folosind `@theme`, `@layer base/components/utilities` și `@apply`.
+- Pentru imagini folosește importuri în componente (ex: `import icon from "../assets/star.svg";`).
+
+Exemplu: folosirea unui SVG în componentă
+
+```jsx
+import starIcon from "../assets/star.svg";
+
+export function Badge({ content }) {
+  return (
+    <div className="badge">
+      <img src={starIcon} alt="" />
+      <p>{content}</p>
+    </div>
+  );
+}
+```
+
+---
+
+### Contribuție / Convenții
+
+- Commit-uri: scurte și descriptive, de ex. `feat: navbar ~50% responsive + Servicii aproape gata`.
+- Cod: respectă ESLint și formatează cu Prettier înainte de commit.
+
+### Deploy
+
+Rezultatul de producție se află în `dist/`. Poate fi servit pe orice hosting static (Netlify, Vercel, GitHub Pages, nginx etc.).
+
+---
+
+### Licență
+
+Proiect intern VennCoat. Toate drepturile rezervate.
