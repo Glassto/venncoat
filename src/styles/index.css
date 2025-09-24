@@ -58,10 +58,18 @@
       @apply mb-0.25 h-3;
     }
   }
+  .absolute-icon-badge {
+    @apply absolute -top-7 left-10 h-[54px] w-[54px] rounded-full p-4;
+    background: var(--color-modern-dark-gradient);
+  }
+  .icon-badge {
+    @apply h-[54px] w-[54px] rounded-full p-4;
+    background: var(--color-modern-dark-gradient);
+  }
 
   /* Secțiuni */
   .section-header {
-    @apply max-w-166;
+    @apply max-w-160;
   }
 
   .section-title {
@@ -163,10 +171,6 @@
 @layer components {
   .services-container {
     @apply mx-10 my-12 mb-24;
-
-    .center {
-      @apply mx-auto;
-    }
   }
 
   .services-cards-container {
@@ -188,17 +192,35 @@
   .features-elements {
     @apply flex items-center gap-2 text-sm text-gray-800;
   }
-
-  .service-card-logo {
-    @apply absolute -top-7 left-10 h-[54px] w-[54px] rounded-full p-4;
-    background: var(--color-modern-dark-gradient);
-  }
 }
 
 /* ===== DESPRE NOI - section ===== */
 @layer components {
   .aboutus-container {
-    @apply bg-white px-20 py-20;
+    @apply flex items-center justify-between bg-white px-20 py-20;
+  }
+
+  .aboutus-points {
+    @apply mt-12 flex gap-14;
+
+    div {
+      @apply flex items-center gap-4;
+    }
+
+    p {
+      @apply font-semibold;
+
+      span {
+        @apply mt-1 block text-sm font-normal;
+      }
+    }
+  }
+}
+
+/* ===== ETAPE - section ===== */
+@layer components {
+  .steps-container {
+    @apply bg-background px-20 py-20;
   }
 }
 

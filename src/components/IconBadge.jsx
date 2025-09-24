@@ -1,7 +1,7 @@
 import React from "react";
 
 const IconBadge = ({ icon }) => {
-  return <div className="service-card-logo">{icon}</div>;
+  return <div className="icon-badge">{icon}</div>;
 };
 
 export default IconBadge;

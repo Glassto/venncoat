@@ -1,9 +1,9 @@
 import React from "react";
 import starIcon from "../assets/star.svg";
 
-const Badge = ({ content }) => {
+const Badge = ({ content, className }) => {
   return (
-    <div className="badge center">
+    <div className={`badge ${className}`}>
       <img src={starIcon} alt="" />
       <p>{content}</p>
     </div>

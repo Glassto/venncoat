@@ -49,19 +49,25 @@ const ServicesCard = () => {
             <h2 className="service-title">{service.title}</h2>
             <p className="service-description">{service.description}</p>
             <ul className="features-list space-y-1.5">
-              {service.features.map((feature) => (
-                <li className="features-elements" key={service.id}>
+              {service.features.map((feature, id) => (
+                <li className="features-elements" key={id}>
                   <CheckIcon className="size-4 text-blue-900" />
                   {feature}
                 </li>
               ))}
             </ul>
             {service.id === 1 ? (
-              <IconBadge icon={<BrickWallShield color="white" size={22} />} />
+              <div className="absolute-icon-badge">
+                <BrickWallShield color="white" size={22} />
+              </div>
             ) : service.id === 2 ? (
-              <IconBadge icon={<Paintbrush color="white" size={22} />} />
+              <div className="absolute-icon-badge">
+                <Paintbrush color="white" size={22} />
+              </div>
             ) : service.id === 3 ? (
-              <IconBadge icon={<Sparkles color="white" size={22} />} />
+              <div className="absolute-icon-badge">
+                <Sparkles color="white" size={22} />
+              </div>
             ) : null}
             <MoreInfoButton />
           </div>
