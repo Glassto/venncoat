@@ -1,7 +1,8 @@
 import React from "react";
 import { CheckIcon } from "@heroicons/react/16/solid";
-import { BrickWallShield, Paintbrush, Sparkles } from "lucide-react";
 import MoreInfoButton from "./MoreInfoButton";
+import { BrickWallShield, Paintbrush, Sparkles } from "lucide-react";
+import IconBadge from "./IconBadge";
 
 const ServicesCard = () => {
   const servicesCardsData = [
@@ -55,15 +56,13 @@ const ServicesCard = () => {
                 </li>
               ))}
             </ul>
-            <div className="service-card-logo">
-              {service.id === 1 ? (
-                <BrickWallShield color="white" size={22} />
-              ) : service.id === 2 ? (
-                <Paintbrush color="white" size={22} />
-              ) : service.id === 3 ? (
-                <Sparkles color="white" size={22} />
-              ) : null}
-            </div>
+            {service.id === 1 ? (
+              <IconBadge icon={<BrickWallShield color="white" size={22} />} />
+            ) : service.id === 2 ? (
+              <IconBadge icon={<Paintbrush color="white" size={22} />} />
+            ) : service.id === 3 ? (
+              <IconBadge icon={<Sparkles color="white" size={22} />} />
+            ) : null}
             <MoreInfoButton />
           </div>
         ))}

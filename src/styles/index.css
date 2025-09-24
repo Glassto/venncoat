@@ -42,7 +42,7 @@
 
   /* Buton pt. mai multe informații - reutilizabil */
   .more-info-button {
-    @apply absolute right-10 -bottom-5 flex w-max cursor-pointer items-center rounded-full p-1 text-slate-50;
+    @apply absolute right-10 -bottom-5 flex w-max cursor-pointer items-center rounded-full p-1 pb-[3.3px] text-slate-50;
     background: var(--color-modern-blue-gradient);
 
     p {
@@ -83,7 +83,7 @@
     @apply mx-auto hidden w-full flex-2/4 items-center justify-center rounded-full text-sm font-medium lg:flex;
 
     ul {
-      @apply flex items-center rounded-full p-1.5 pb-1.25 text-slate-50;
+      @apply flex items-center rounded-full p-1.5 pb-[5.6px] text-slate-50;
       background: var(--color-modern-dark-gradient);
     }
 
