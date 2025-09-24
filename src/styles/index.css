@@ -8,6 +8,7 @@
   --color-foreground: #000000;
   --background-image-hero: url("../assets/hero-image.webp");
   --color-modern-dark-gradient: linear-gradient(to bottom, #000000, #262626);
+  --color-modern-blue-gradient: linear-gradient(to bottom, #0f3460, #325b8c);
   --font-inter: Inter, sans-serif;
 }
 
@@ -18,7 +19,7 @@
   }
 
   header {
-    @apply fixed top-0 right-10 left-10 mt-5 box-border flex h-20 items-center rounded-[100px] border border-slate-50/10 bg-slate-200/10 px-4 backdrop-blur-md;
+    @apply fixed top-0 right-10 left-10 z-50 mt-5 box-border flex h-20 items-center rounded-[100px] border border-slate-50/10 bg-slate-200/10 px-4 backdrop-blur-md;
   }
 }
 
@@ -31,7 +32,7 @@
 
   /* Buton de acțiune - reutilizabil */
   .action-button {
-    @apply flex w-max cursor-pointer items-center rounded-full p-1.5 pb-[5.75px] text-slate-50;
+    @apply flex w-max cursor-pointer items-center rounded-full border border-neutral-800 p-1.5 pb-[5.75px] text-slate-50;
     background: var(--color-modern-dark-gradient);
 
     p {
@@ -39,12 +40,22 @@
     }
   }
 
+  /* Buton pt. mai multe informații - reutilizabil */
+  .more-info-button {
+    @apply absolute right-10 -bottom-5 flex w-max cursor-pointer items-center rounded-full p-1 text-slate-50;
+    background: var(--color-modern-blue-gradient);
+
+    p {
+      @apply flex items-center gap-3 rounded-full px-5 py-2 pr-2 pb-1.75 text-sm font-semibold transition-all duration-150 group-hover:bg-slate-50 group-hover:pr-5 group-hover:text-sky-900;
+    }
+  }
+
   /* Badge - reutilizabil */
   .badge {
-    @apply flex w-max items-center gap-3 rounded-full border border-zinc-300 bg-white px-5 py-1 text-sm;
+    @apply flex w-max items-center gap-3 rounded-full border border-zinc-300 bg-white px-5 py-1 pb-0.75 text-sm font-medium;
 
     img {
-      @apply h-3;
+      @apply mb-0.25 h-3;
     }
   }
 
@@ -101,7 +112,7 @@
 
 /* ===== HERO SECTION ===== */
 @layer components {
-  .hero {
+  .hero-container {
     @apply bg-hero h-164 w-full overflow-hidden bg-cover;
   }
 
@@ -151,7 +162,11 @@
 /* ===== SERVICII SECTION ===== */
 @layer components {
   .services-container {
-    @apply mx-10 my-12;
+    @apply mx-10 my-12 mb-24;
+
+    .center {
+      @apply mx-auto;
+    }
   }
 
   .services-cards-container {
@@ -159,7 +174,7 @@
   }
 
   .service-card {
-    @apply rounded-xl border border-zinc-300 bg-white px-10 py-12;
+    @apply relative rounded-xl border border-zinc-300 bg-white px-10 py-12 transition-shadow duration-200 hover:shadow;
   }
 
   .service-title {
@@ -172,6 +187,18 @@
 
   .features-elements {
     @apply flex items-center gap-2 text-sm text-gray-800;
+  }
+
+  .service-card-logo {
+    @apply absolute -top-7 left-10 h-[54px] w-[54px] rounded-full p-4;
+    background: var(--color-modern-dark-gradient);
+  }
+}
+
+/* ===== DESPRE NOI - section ===== */
+@layer components {
+  .aboutus-container {
+    @apply bg-white px-20 py-20;
   }
 }
 

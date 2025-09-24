@@ -1,9 +1,12 @@
 import React from "react";
 import { CheckIcon } from "@heroicons/react/16/solid";
+import { BrickWallShield, Paintbrush, Sparkles } from "lucide-react";
+import MoreInfoButton from "./MoreInfoButton";
 
 const ServicesCard = () => {
   const servicesCardsData = [
     {
+      id: 1,
       title: "Tencuială Premium",
       description:
         "Baza solidă pentru orice proiect, aplicată cu precizie pentru durabilitate și finisaje impecabile.",
@@ -14,6 +17,7 @@ const ServicesCard = () => {
       ],
     },
     {
+      id: 2,
       title: "Vopsitorie Profesională",
       description:
         "Culori uniforme și protecție pe termen lung, prin tehnici moderne și materiale premium.",
@@ -24,6 +28,7 @@ const ServicesCard = () => {
       ],
     },
     {
+      id: 3,
       title: "Finisaje Decorative",
       description:
         "Detalii care transformă spațiile în experiențe vizuale, cu texturi și efecte personalizate.",
@@ -37,36 +42,29 @@ const ServicesCard = () => {
 
   return (
     <>
-      {/* <div className="container my-10 grid gap-6 md:grid-cols-3">
-        {servicesCardsData.map((service) => (
-          <div
-            key={service.title}
-            className="rounded-2xl border border-zinc-300 bg-white p-6"
-          >
-            <h3 className="mb-2 text-xl font-bold">{service.title}</h3>
-            <p className="mb-6 text-sm text-zinc-700">{service.description}</p>
-            <div className="flex flex-col gap-3">
-              {service.features?.map((feature) => (
-                <p>{feature}</p>
-              ))}
-            </div>
-          </div>
-        ))}
-      </div> */}
-
       <div className="services-cards-container">
         {servicesCardsData.map((service) => (
-          <div key={service.title} className="service-card">
+          <div key={service.id} className="service-card">
             <h2 className="service-title">{service.title}</h2>
             <p className="service-description">{service.description}</p>
             <ul className="features-list space-y-1.5">
               {service.features.map((feature) => (
-                <li className="features-elements" key={service.title}>
+                <li className="features-elements" key={service.id}>
                   <CheckIcon className="size-4 text-blue-900" />
                   {feature}
                 </li>
               ))}
             </ul>
+            <div className="service-card-logo">
+              {service.id === 1 ? (
+                <BrickWallShield color="white" size={22} />
+              ) : service.id === 2 ? (
+                <Paintbrush color="white" size={22} />
+              ) : service.id === 3 ? (
+                <Sparkles color="white" size={22} />
+              ) : null}
+            </div>
+            <MoreInfoButton />
           </div>
         ))}
       </div>

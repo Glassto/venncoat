@@ -3,7 +3,7 @@ import starIcon from "../assets/star.svg";
 
 const Badge = ({ content }) => {
   return (
-    <div className="badge mx-auto">
+    <div className="badge center">
       <img src={starIcon} alt="" />
       <p>{content}</p>
     </div>
