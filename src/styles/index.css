@@ -75,6 +75,10 @@
   .section-title {
     @apply mt-8 mb-5 text-4xl leading-tight font-extrabold;
   }
+
+  .section-description {
+    @apply text-gray-800;
+  }
 }
 
 /* ===== COMPONENT NAVBAR ===== */
@@ -211,7 +215,7 @@
       @apply font-semibold;
 
       span {
-        @apply mt-1 block text-sm font-normal;
+        @apply mt-1 block text-sm font-normal text-gray-800;
       }
     }
   }
@@ -222,11 +226,74 @@
   .steps-container {
     @apply bg-background px-20 py-20;
   }
+
+  .steps-cards-container {
+    @apply mt-12 flex w-full flex-col;
+  }
+
+  .interaction {
+    @apply mb-6 flex items-center justify-end gap-3;
+
+    p {
+      @apply font-semibold;
+    }
+
+    .ping {
+      @apply mr-3 h-2 w-2 animate-ping rounded-full bg-red-600;
+    }
+  }
+
+  .steps-cards {
+    @apply flex max-w-full snap-x snap-mandatory flex-nowrap gap-8 overflow-x-auto will-change-scroll;
+  }
+
+  .step-card {
+    @apply flex min-w-90 snap-start snap-always scroll-ml-1 flex-col;
+  }
+
+  .step-number {
+    @apply mb-6 flex items-center gap-8;
+  }
+
+  .step-badge {
+    @apply flex h-[54px] min-w-[54px] items-center justify-center rounded-full text-xl font-extrabold text-white;
+    background: var(--color-modern-dark-gradient);
+  }
+
+  .step-bar {
+    @apply h-2 w-full rounded-full bg-black;
+  }
+
+  .step-header {
+    @apply w-full;
+  }
+
+  .step-title {
+    @apply text-2xl font-extrabold;
+  }
+
+  .step-description {
+    @apply my-4 text-gray-800;
+
+    span {
+      @apply font-semibold;
+    }
+  }
 }
 
 /* ===== UTILITARE ===== */
 @layer utilities {
   .centered-badge {
     @apply mx-auto;
+  }
+
+  /* Hide scrollbar for Chrome, Safari, and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge, and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
