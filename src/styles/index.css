@@ -228,7 +228,7 @@
   }
 
   .steps-cards-container {
-    @apply mt-12 flex w-full flex-col;
+    @apply mt-8 mr-2 flex w-full flex-col;
   }
 
   .interaction {
@@ -245,10 +245,14 @@
 
   .steps-cards {
     @apply flex max-w-full snap-x snap-mandatory flex-nowrap gap-8 overflow-x-auto will-change-scroll;
+
+    > *:nth-child(even) {
+      @apply min-w-100 rounded-2xl bg-neutral-200 px-8;
+    }
   }
 
   .step-card {
-    @apply flex min-w-90 snap-start snap-always scroll-ml-1 flex-col;
+    @apply flex min-w-84 snap-start snap-always scroll-ml-1 flex-col py-8;
   }
 
   .step-number {
@@ -265,15 +269,15 @@
   }
 
   .step-header {
-    @apply w-full;
+    @apply w-80;
   }
 
   .step-title {
-    @apply text-2xl font-extrabold;
+    @apply min-h-16 text-2xl font-extrabold;
   }
 
   .step-description {
-    @apply my-4 text-gray-800;
+    @apply mt-4 text-gray-800;
 
     span {
       @apply font-semibold;
