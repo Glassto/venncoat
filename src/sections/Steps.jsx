@@ -35,9 +35,8 @@ const Steps = () => {
       description: (
         <>
           <span>Discutăm și fixăm</span> împreună <span>data începerii</span> și
-          timpul estimat pentru
-          <span>finalizare</span>, astfel încât să se potrivească perfect cu{" "}
-          <span>programul clientului</span>.
+          timpul estimat pentru <span>finalizare</span>, astfel încât să se
+          potrivească perfect cu <span>programul clientului</span>.
         </>
       ),
     },
@@ -58,7 +57,7 @@ const Steps = () => {
       description: (
         <>
           Asigurăm materiale, <span>organizăm</span> echipa și{" "}
-          <span>protejăm</span> spațiul existent (podele, mobilier, etc) pentru
+          <span>protejăm</span> spațiul existent (podele, mobilier, etc.) pentru
           o <span>lucrare curată și eficientă</span>.
         </>
       ),

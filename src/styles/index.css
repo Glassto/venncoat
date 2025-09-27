@@ -19,7 +19,7 @@
   }
 
   header {
-    @apply fixed top-0 right-10 left-10 z-50 mt-5 box-border flex h-20 items-center rounded-[100px] border border-slate-50/10 bg-slate-200/10 px-4 backdrop-blur-md;
+    @apply fixed top-0 right-10 left-10 z-50 mt-5 box-border flex h-20 items-center rounded-[100px] border border-slate-50/10 bg-slate-300/15 px-4 backdrop-blur-md;
   }
 }
 
@@ -52,12 +52,19 @@
 
   /* Badge - reutilizabil */
   .badge {
-    @apply flex w-max items-center gap-3 rounded-full border border-zinc-300 bg-white px-5 py-1 pb-0.75 text-sm font-medium;
+    @apply flex w-max items-center gap-3 rounded-full border border-zinc-300 bg-white px-5 py-1 pb-0.75 text-sm font-medium select-none;
 
     img {
       @apply mb-0.25 h-3;
     }
   }
+  .gray-badge {
+    @apply bg-background;
+  }
+  .dark-badge {
+    @apply mx-auto border border-zinc-800 bg-neutral-900 text-neutral-200;
+  }
+
   .absolute-icon-badge {
     @apply absolute -top-7 left-10 h-[54px] w-[54px] rounded-full p-4;
     background: var(--color-modern-dark-gradient);
@@ -69,7 +76,7 @@
 
   /* Secțiuni */
   .section-header {
-    @apply max-w-160;
+    @apply relative z-10 max-w-160;
   }
 
   .section-title {
@@ -239,7 +246,7 @@
     }
 
     .ping {
-      @apply mr-3 h-2 w-2 animate-ping rounded-full bg-red-600;
+      @apply mr-3 h-2 w-2 rounded-full bg-red-600;
     }
   }
 
@@ -247,7 +254,7 @@
     @apply flex max-w-full snap-x snap-mandatory flex-nowrap gap-8 overflow-x-auto will-change-scroll;
 
     > *:nth-child(even) {
-      @apply min-w-100 rounded-2xl bg-neutral-200 px-8;
+      @apply min-w-100 rounded-2xl bg-[#e7e7e7] px-8;
     }
   }
 
@@ -256,11 +263,11 @@
   }
 
   .step-number {
-    @apply mb-6 flex items-center gap-8;
+    @apply mb-6 flex items-center gap-6;
   }
 
   .step-badge {
-    @apply flex h-[54px] min-w-[54px] items-center justify-center rounded-full text-xl font-extrabold text-white;
+    @apply flex h-12 min-w-12 items-center justify-center rounded-full text-lg font-extrabold text-white;
     background: var(--color-modern-dark-gradient);
   }
 
@@ -277,10 +284,72 @@
   }
 
   .step-description {
-    @apply mt-4 text-gray-800;
+    @apply mt-6 text-gray-800;
 
     span {
       @apply font-semibold;
+    }
+  }
+}
+
+/* ===== CONTACT - section ===== */
+@layer components {
+  .contact-section {
+    @apply relative z-100 w-full overflow-hidden;
+
+    .top-texture {
+      @apply absolute top-0 left-0 z-0 w-full opacity-70 select-none;
+    }
+
+    .bottom-texture {
+      @apply absolute right-0 bottom-0 z-0 w-full rotate-180 opacity-30 select-none;
+    }
+  }
+
+  .contact-container {
+    @apply bg-gradient-to-b from-black to-zinc-900 to-76% px-20 py-12;
+  }
+
+  .contact-options {
+    @apply relative z-10 mt-12 flex gap-30 text-xl font-extrabold text-white;
+  }
+
+  .contact-info {
+    @apply flex flex-col gap-8;
+
+    .contact-badge {
+      @apply flex items-center gap-4;
+    }
+    .icon {
+      @apply h-[54px] w-[54px] rounded-full border border-zinc-700/70 bg-zinc-900 p-4;
+    }
+
+    .info {
+      @apply text-base font-semibold;
+
+      span {
+        @apply mt-1 block text-sm font-normal text-neutral-400;
+      }
+    }
+  }
+
+  .contact-form {
+    @apply flex w-full flex-col gap-8;
+
+    .form-container {
+      @apply flex flex-col gap-10 rounded-xl border border-zinc-700/70 bg-zinc-900 p-8;
+    }
+
+    input {
+      @apply mt-2 h-9 w-full rounded-lg border border-zinc-700/70 bg-zinc-950/55 px-3 text-base font-medium focus:border-blue-700 focus:ring-1;
+    }
+
+    .form-top {
+      @apply flex w-full items-center gap-8;
+    }
+
+    .form-middle {
+      @apply flex w-full items-center gap-8;
     }
   }
 }

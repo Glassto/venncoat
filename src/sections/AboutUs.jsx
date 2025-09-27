@@ -9,7 +9,7 @@ const AboutUs = () => {
   return (
     <section className="aboutus-container">
       <div className="section-header">
-        <Badge className="bg-background" content={"Despre noi"} />
+        <Badge className="gray-badge" content={"Despre noi"} />
         <h1 className="section-title">
           De la bază la detaliu, suntem partenerul tău de încredere
         </h1>
