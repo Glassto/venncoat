@@ -1,8 +1,8 @@
-import React from "react";
+import { useRef, useEffect, useState } from "react";
 import Badge from "../components/Badge";
 import pointsTexture from "../assets/points-texture.webp";
-import IconBadge from "../components/IconBadge";
 import { Phone, Mail, MapPin } from "lucide-react";
+import ContactForm from "../components/ContactForm";
 
 const Contact = () => {
   return (
@@ -53,60 +53,7 @@ const Contact = () => {
           </div>
           <div className="contact-form">
             <h2>Solicită gratuit o ofertă:</h2>
-            <form action="" className="form-container">
-              <div className="form-top">
-                <div className="flex-1/3">
-                  <label className="block text-sm font-medium">Nume:</label>
-                  <input
-                    type="text"
-                    name="nume"
-                    placeholder="Popescu"
-                    required
-                  />
-                </div>
-                <div className="flex-1/3">
-                  <label className="block text-sm font-medium">Prenume:</label>
-                  <input
-                    type="text"
-                    name="prenume"
-                    placeholder="Mihai"
-                    required
-                  />
-                </div>
-                <div className="flex-1/3">
-                  <label className="block text-sm font-medium">Telefon:</label>
-                  <input
-                    type="text"
-                    name="telefon"
-                    placeholder="07........"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="form-middle">
-                <div className="flex-1/2">
-                  <label className="block text-sm font-medium">
-                    Serviciu Dorit:
-                  </label>
-                  <input
-                    type="text"
-                    name="telefon"
-                    placeholder="Mai multe servicii"
-                    required
-                  />
-                </div>
-                <div className="flex-1/2">
-                  <label className="block text-sm font-medium">Email:</label>
-                  <input
-                    type="text"
-                    name="email"
-                    placeholder="mihai.pop@gmail.com"
-                    required
-                  />
-                </div>
-              </div>
-              <div className="form-bottom"></div>
-            </form>
+            <ContactForm />
           </div>
         </div>
       </section>

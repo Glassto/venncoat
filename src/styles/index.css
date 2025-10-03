@@ -138,7 +138,7 @@
   .hero-content {
     @apply mt-10 ml-20 flex h-full w-3xl flex-col justify-center text-white;
 
-    h1 {
+    .hero-title {
       @apply text-5xl leading-tight font-black;
 
       span {
@@ -298,11 +298,11 @@
     @apply relative z-100 w-full overflow-hidden;
 
     .top-texture {
-      @apply absolute top-0 left-0 z-0 w-full opacity-70 select-none;
+      @apply absolute top-0 left-0 z-0 w-full opacity-75 select-none;
     }
 
     .bottom-texture {
-      @apply absolute right-0 bottom-0 z-0 w-full rotate-180 opacity-30 select-none;
+      @apply absolute right-0 bottom-0 z-0 w-full rotate-180 opacity-60 select-none;
     }
   }
 
@@ -337,19 +337,46 @@
     @apply flex w-full flex-col gap-8;
 
     .form-container {
-      @apply flex flex-col gap-10 rounded-xl border border-zinc-700/70 bg-zinc-900 p-8;
+      @apply flex flex-col gap-6 rounded-xl border border-zinc-700/70 bg-zinc-900 p-8;
     }
 
     input {
-      @apply mt-2 h-9 w-full rounded-lg border border-zinc-700/70 bg-zinc-950/55 px-3 text-base font-medium focus:border-blue-700 focus:ring-1;
+      @apply mt-2 h-9 w-full rounded-lg border border-zinc-700/70 bg-zinc-950/55 px-3 text-base font-medium placeholder:text-zinc-600;
+    }
+    label {
+      @apply block text-sm font-medium tracking-wide;
+    }
+    textarea {
+      @apply mt-2 max-h-60 min-h-30 w-full resize-none overflow-hidden rounded-lg border border-zinc-700/70 bg-zinc-950/55 px-3 py-2 text-base font-medium placeholder:text-zinc-600;
     }
 
     .form-top {
-      @apply flex w-full items-center gap-8;
+      @apply flex w-full items-center gap-10;
     }
 
     .form-middle {
-      @apply flex w-full items-center gap-8;
+      @apply mb-8 flex w-full items-center gap-10;
+    }
+
+    .form-bottom {
+      @apply flex w-full flex-col gap-6;
+    }
+
+    .form-actions {
+      @apply flex w-full items-center justify-end gap-8 text-base font-semibold;
+
+      .form-status {
+        @apply w-full rounded-lg border-zinc-700/70 bg-transparent px-3 py-2 font-medium;
+      }
+
+      .cancel-btn {
+        @apply rounded-lg border border-zinc-700/70 bg-transparent px-3 py-2 font-medium;
+      }
+
+      .submit-btn {
+        @apply flex min-w-50 items-center justify-center gap-3 rounded-lg px-6 py-2;
+        background: var(--color-modern-blue-gradient);
+      }
     }
   }
 }
