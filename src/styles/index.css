@@ -259,7 +259,7 @@
   }
 
   .step-card {
-    @apply flex min-w-84 snap-start snap-always scroll-ml-1 flex-col py-8;
+    @apply flex min-w-84 snap-start snap-always scroll-ml-1 flex-col px-1 py-8;
   }
 
   .step-number {
@@ -374,9 +374,41 @@
       }
 
       .submit-btn {
-        @apply flex min-w-50 items-center justify-center gap-3 rounded-lg px-6 py-2;
+        @apply flex min-w-50 cursor-pointer items-center justify-center gap-3 rounded-lg px-6 py-2;
         background: var(--color-modern-blue-gradient);
       }
+
+      .submit-btn:disabled {
+        @apply cursor-not-allowed opacity-60;
+        pointer-events: none;
+        filter: grayscale(20%);
+      }
+    }
+  }
+}
+
+/* ===== FAQ - section ===== */
+@layer components {
+  .faq-container {
+    @apply bg-background flex h-max items-start gap-22 px-20 py-30;
+  }
+
+  .faq-questions {
+    @apply flex w-full flex-col gap-6;
+  }
+
+  .faq-question {
+    @apply flex flex-col gap-3;
+
+    .faq-title {
+      @apply flex cursor-pointer items-center justify-between rounded-lg px-3 py-1 text-lg font-bold transition-colors duration-400 hover:bg-neutral-200;
+    }
+    .active {
+      @apply bg-neutral-200;
+    }
+
+    .faq-answer {
+      @apply overflow-hidden px-4 text-gray-800 transition-all duration-900;
     }
   }
 }

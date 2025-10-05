@@ -6,6 +6,7 @@ import Services from "./sections/Services";
 import AboutUs from "./sections/AboutUs";
 import Steps from "./sections/Steps";
 import Contact from "./sections/Contact";
+import FAQ from "./sections/FAQ";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <AboutUs />
       <Steps />
       <Contact />
+      <FAQ />
     </>
   );
 }

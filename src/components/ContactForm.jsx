@@ -27,7 +27,8 @@ const ContactForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setStatus("loading..");
+    if (status === "loading") return;
+    setStatus("loading");
 
     try {
       const res = await fetch("/api/send-form", {
@@ -162,7 +163,12 @@ const ContactForm = () => {
             </div>
           </div>
         )}
-        <button className="submit-btn">
+        <button
+          type="submit"
+          className="submit-btn"
+          disabled={status === "loading.."}
+          aria-busy={status === "loading.."}
+        >
           Solicită Ofertă
           <ArrowLongRightIcon className="size-6" />
         </button>
